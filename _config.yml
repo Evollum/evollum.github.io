@@ -1,0 +1,5 @@
+remote_theme: pages-themes/merlot@v0.2.0
+plugins:
+  - jekyll-remote-theme
+title: Evollum
+description: Welcome to my personal webpage, to show you what I’ve achieved so far in my life.

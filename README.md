@@ -1,8 +1,9 @@
 remote_theme: pages-themes/merlot@v0.2.0
 plugins:
   - jekyll-remote-theme
-title: [Evollum]
-description: [This is my personal webpage, to show stuff from my life and what I achieved so far]
+title: Evollum
+description: This is my personal webpage, to show stuff from my life and what I achieved so far.
+
 # evollum.github.io
 My personal webpage
 

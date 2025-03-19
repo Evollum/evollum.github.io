@@ -1,4 +1,4 @@
-// Select carousel elements
+// Select slideshow elements
 const carousel = document.querySelector('.carousel');
 const items = document.querySelectorAll('.carousel-item');
 const prevBtn = document.querySelector('.carousel-btn.prev');

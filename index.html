@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elisabeth Vollum</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -16,99 +15,111 @@
             line-height: 1.6;
         }
         header {
-            background: #ff69b4;
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
             color: #fff;
-            padding: 2rem 0;
+            padding: 4rem 0;
             text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
         }
         nav {
             text-align: center;
-            margin: 1rem 0;
+            margin: 2rem 0;
         }
         nav a {
             margin: 0 1rem;
             text-decoration: none;
             color: #ff69b4;
             font-weight: bold;
+            font-size: 1.2rem;
         }
         nav a:hover {
             color: #ff1493;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .card {
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 2rem;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        section {
-            margin-bottom: 2rem;
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
-        h2 {
+        .card h2 {
             color: #ff69b4;
+            margin-bottom: 1rem;
         }
-        a {
-            color: #ff69b4;
+        .card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #ff69b4;
+            color: #fff;
             text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
         }
-        a:hover {
-            text-decoration: underline;
+        .card a:hover {
+            background: #ff1493;
         }
     </style>
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Welcome to My personal Webpage</h1>
-        <p>Explore my skills, learn more about me, and check out some of my projects!</p>
+        <h1>Welcome to My Personal Webpage</h1>
+        <p>Explore my skills, learn more about me, and check out my projects and adventures!</p>
     </header>
     <nav>
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#adventure">Adventure</a>
+        <a href="about.html">About Me</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="adventure.html">Adventure</a>
     </nav>
     <div class="container">
-        <section id="about">
+        <div class="card">
             <h2>About Me</h2>
-            <p>Hello! I'm Elisabeth Vollum, a passionate Geography master's student at NTNU with a strong interest in sustainability and mapping. 
-               I enjoy working on projects that make a positive impact on the environment. In my free time, I love hiking in nature, playing handball, 
-               and spending time with friends. I thrive in social settings and enjoy exploring new experiences. Welcome to my personal webpage!</p>
-        </section>
-        <section id="skills">
+            <p>Learn more about who I am, my background, and my passions.</p>
+            <a href="about.html">Read More</a>
+        </div>
+        <div class="card">
             <h2>Skills</h2>
-            <ul>
-                <li>ArcGIS</li>
-                <li>Sustainability</li>
-                <li>Coding</li>
-            </ul>
-        </section>
-        <section id="projects">
+            <p>Discover the tools and expertise I bring to my work.</p>
+            <a href="skills.html">View Skills</a>
+        </div>
+        <div class="card">
             <h2>Projects</h2>
-            <ul>
-                <li><a href="project1.html">Project 1 - Erosion Prone Areas</a></li>
-                <li><a href="project2.html">Project 2 - StoryMap Telling</a></li>
-            </ul>
-        </section>
-        <section id="adventure">
+            <p>Explore the projects I've worked on and the impact they've made.</p>
+            <a href="projects.html">See Projects</a>
+        </div>
+        <div class="card">
             <h2>Adventure</h2>
-            <p>When I'm not working on projects or studying, I love immersing myself in nature. Hiking through scenic trails, exploring new places, and embracing outdoor adventures are some of my favorite activities. 
-               Whether it's a challenging mountain hike or a peaceful walk in the woods, I find joy and inspiration in the great outdoors. Adventure fuels my creativity and keeps me connected to the world around me.</p>
-        </section>
-        <section id="carousel">
-            <h2>Interactive slideshow</h2>
-            <div class="carousel-container">
-                <div class="carousel">
-                    <div class="carousel-item active">Welcome to my website!</div>
-                    <div class="carousel-item">I love exploring nature 🌿</div>
-                    <div class="carousel-item">Check out my projects 🚀</div>
-                    <div class="carousel-item">Let's connect and collaborate! 🤝</div>
-                </div>
-                <button class="carousel-btn prev">❮</button>
-                <button class="carousel-btn next">❯</button>
-            </div>
-        </section>
+            <p>Find out how I connect with nature and embrace the outdoors.</p>
+            <a href="adventure.html">Join the Adventure</a>
+        </div>
     </div>
 </body>
 </html>

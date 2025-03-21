@@ -9,7 +9,7 @@
     height: 50px;
     background: url('images/monkey.png') no-repeat center/contain;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+    transition: bottom 2s ease-in-out; /* Smooth climbing animation */
 }
 
 .monkey:hover {
@@ -21,7 +21,6 @@
     height: 400px;
     width: 200px;
     background-color: #8b4513; /* Brown trunk */
-    border-radius: 20px; /* Rounded edges for the trunk */
     margin: 0 auto; /* Center the tree horizontally */
 }
 

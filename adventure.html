@@ -10,15 +10,22 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff0f5;
-            color: #333;
+            background: linear-gradient(135deg, #0b3d0b, #1a1a40);
+            color: #fff;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         header {
-            background: #ff69b4;
+            background: linear-gradient(135deg, #228b22, #4b0082);
             color: #fff;
-            padding: 1.5rem 0;
+            padding: 2rem 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 0 10px #32cd32, 0 0 20px #4b0082;
         }
         nav {
             text-align: center;
@@ -27,21 +34,70 @@
         nav a {
             margin: 0 1rem;
             text-decoration: none;
-            color: #ff69b4;
+            color: #32cd32;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 0 0 5px #32cd32;
+        }
+        nav a:hover {
+            color: #4b0082;
+            text-shadow: 0 0 10px #4b0082;
         }
         .container {
             max-width: 800px;
             margin: 2rem auto;
-            padding: 1rem;
-            background: #fff;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
         }
         h2 {
-            color: #ff69b4;
+            color: #32cd32;
+            text-align: center;
+            text-shadow: 0 0 10px #32cd32, 0 0 20px #4b0082;
         }
         p {
             margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+        .tree-container {
+            position: relative;
+            width: 200px;
+            height: 400px;
+            margin: 2rem auto;
+            background: #8b4513;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .tree-leaves {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 200px;
+            background: radial-gradient(circle, #228b22, #006400);
+            border-radius: 50%;
+        }
+        .monkey {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/3/3a/Monkey_cartoon.svg') no-repeat center/contain;
+            animation: climb 5s infinite alternate ease-in-out;
+        }
+        @keyframes climb {
+            0% {
+                bottom: 10px;
+            }
+            100% {
+                bottom: 300px;
+            }
         }
     </style>
 </head>
@@ -54,18 +110,15 @@
     </nav>
     <div class="container">
         <section>
-            <h2>Adventure</h2>
-            <p>When I'm not working on projects or studying, I love immersing myself in nature. Hiking through scenic trails, exploring new places, and embracing outdoor adventures are some of my favorite activities.</p>
-            <p>Whether it's a challenging mountain hike or a peaceful walk in the woods, I find joy and inspiration in the great outdoors. Adventure fuels my creativity and keeps me connected to the world around me.</p>
-            <p>Some of my favorite adventures include:</p>
-            <ul>
-                <li>Hiking in the Norwegian fjords</li>
-                <li>Exploring national parks</li>
-                <li>Camping under the stars</li>
-                <li>Kayaking in serene lakes</li>
-                <li>Traveling to new countries and experiencing different cultures</li>
-            </ul>
+            <h2>Adventure Awaits</h2>
+            <p>Step into a world where the lush greenery of the jungle meets the infinite mysteries of the cosmos. My adventures are a blend of earthly wonders and celestial dreams.</p>
+            <p>From trekking through dense forests to gazing at the stars in remote locations, every journey is a chance to explore the unknown and embrace the extraordinary.</p>
         </section>
+        <div class="tree-container">
+            <div class="tree-leaves"></div>
+            <div class="monkey"></div>
+        </div>
+        <a href="index.html" style="display: block; text-align: center; margin-top: 2rem; color: #32cd32; text-decoration: none; font-weight: bold;">Back to Home</a>
     </div>
 </body>
 </html>

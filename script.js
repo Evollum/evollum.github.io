@@ -1,25 +1,115 @@
-// Select slideshow elements
-const carousel = document.querySelector('.carousel');
-const items = document.querySelectorAll('.carousel-item');
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
-
-let currentIndex = 0; // Track the current slide
-
-// Function to update the carousel's position
-function updateCarousel() {
-    const offset = -currentIndex * 100; // Calculate the offset for the active slide
-    carousel.style.transform = `translateX(${offset}%)`;
-}
-
-// Event listener for the "Previous" button
-prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + items.length) % items.length; // Loop back to the last slide if at the beginning
-    updateCarousel();
-});
-
-// Event listener for the "Next" button
-nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % items.length; // Loop back to the first slide if at the end
-    updateCarousel();
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Adventures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0b3d0b, #1a1a40);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #228b22, #4b0082);
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 0 10px #32cd32, 0 0 20px #4b0082;
+        }
+        nav {
+            text-align: center;
+            margin: 1rem 0;
+        }
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #32cd32;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 0 0 5px #32cd32;
+        }
+        nav a:hover {
+            color: #4b0082;
+            text-shadow: 0 0 10px #4b0082;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        h2 {
+            color: #32cd32;
+            text-align: center;
+            text-shadow: 0 0 10px #32cd32, 0 0 20px #4b0082;
+        }
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+        .tree-container {
+            position: relative;
+            width: 200px;
+            height: 400px;
+            margin: 2rem auto;
+            background: #8b4513;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .tree-leaves {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 200px;
+            background: radial-gradient(circle, #228b22, #006400);
+            border-radius: 50%;
+        }
+        .monkey {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/3/3a/Monkey_cartoon.svg') no-repeat center/contain;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Adventures</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+    <div class="container">
+        <section>
+            <h2>Adventure Awaits</h2>
+            <p>Step into a world where the lush greenery of the jungle meets the infinite mysteries of the cosmos. My adventures are a blend of earthly wonders and celestial dreams.</p>
+        </section>
+        <div class="tree-container">
+            <div class="tree-leaves"></div>
+            <div class="monkey" id="monkey"></div>
+        </div>
+        <a href="index.html" style="display: block; text-align: center; margin-top: 2rem; color: #32cd32; text-decoration: none; font-weight: bold;">Back to Home</a>
+    </div>
+    <script>
+        const monkey = document.getElementById('monkey');

@@ -105,25 +105,31 @@
 
         .photo {
             flex: 0 0 auto;
-            width: 150px;
+            width: 300px; /* Increase the width */
             text-align: center;
             background: #fff;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add a stronger shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
+        }
+
+        .photo:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
         }
 
         .photo img {
             width: 100%;
             height: auto;
             display: block;
-            border-bottom: 2px solid #ddd;
+            border-bottom: 3px solid #ddd; /* Thicker border */
         }
 
         .photo p {
             margin: 0;
-            padding: 0.5rem;
-            font-size: 0.9rem;
+            padding: 0.8rem; /* Increase padding */
+            font-size: 1rem; /* Slightly larger text */
             color: #333;
             background: #f9f9f9;
         }

@@ -91,6 +91,42 @@
             background: url('images/monkey.png') no-repeat center/contain; /* Use relative path */
             cursor: pointer;
         }
+        .photo-strip {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            overflow-x: auto;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo {
+            flex: 0 0 auto;
+            width: 150px;
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .photo p {
+            margin: 0;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            color: #333;
+            background: #f9f9f9;
+        }
     </style>
 </head>
 <body>
@@ -118,6 +154,23 @@
                 <li>Visiting the pandas in Chengdu</li>
                 <li>Relaxing in the beautiful Xian</li>
             </ul>
+        </section>
+        <section>
+            <h2>Photo Highlights</h2>
+            <div class="photo-strip">
+                <div class="photo">
+                    <img src="images/pexels-pixabay-36789.jpg" alt="Shanghai skyline">
+                    <p>Shanghai skyline</p>
+                </div>
+                <div class="photo">
+                    <img src="images/pexels-apasaric-2481630.jpg" alt="Authentic Chinese street">
+                    <p>Authentic Chinese Street</p>
+                </div>
+                <div class="photo">
+                    <img src="images/pexels-fotoslian-2915957.jpg" alt="Cultural buildings">
+                    <p>Cultural Building</p>
+                </div>
+            </div>
         </section>
         <div class="tree-container">
             <div class="tree-leaves"></div>

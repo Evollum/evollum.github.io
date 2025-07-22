@@ -3,154 +3,264 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elisabeth Vollum</title>
+    <title>Elisabeth Vollum TST</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
+      * {
+        box-sizing: border-box;
+      }
       body {
-        font-family: "Roboto", sans-serif;
+        font-family: "Inter", sans-serif;
         margin: 0;
-        padding: 0;
-        background-color: #fff0f5;
-        color: #333;
+        background: #0a0a0a;
+        color: #e2e8f0;
         line-height: 1.6;
       }
       header {
-        background: linear-gradient(135deg, #ff69b4, #ff1493);
-        color: #fff;
-        padding: 4rem 0;
+        background: linear-gradient(
+            rgba(30, 41, 59, 0.85),
+            rgba(15, 23, 42, 0.9)
+          ),
+          url("MAP.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #ffffff;
+        padding: 5rem 0;
         text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+      }
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(96, 165, 250, 0.1),
+          rgba(59, 130, 246, 0.1),
+          rgba(139, 92, 246, 0.1)
+        );
+        animation: shimmer 4s ease-in-out infinite;
+      }
+      @keyframes shimmer {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 0.6;
+        }
       }
       header h1 {
-        font-size: 2.5rem;
+        font: 700 4rem/1 "Inter";
         margin: 0;
+        letter-spacing: -0.025em;
+        background: linear-gradient(
+          135deg,
+          #fbbf24,
+          #f59e0b,
+          #60a5fa,
+          #3b82f6,
+          #8b5cf6,
+          #ec4899
+        );
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientShift 3s ease-in-out infinite;
+        position: relative;
+        z-index: 2;
+        text-shadow: 0 0 30px rgba(96, 165, 250, 0.5);
+      }
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
       }
       header p {
-        font-size: 1.2rem;
-        margin-top: 1rem;
+        font: 500 1.4rem/1.4 "Inter";
+        margin: 1.5rem auto 0;
+        opacity: 0.95;
+        max-width: 650px;
+        color: #f1f5f9;
+        position: relative;
+        z-index: 2;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       }
       nav {
+        background: #111827;
+        padding: 1.2rem 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 100;
         text-align: center;
-        margin: 2rem 0;
+        border-bottom: 1px solid #374151;
       }
       nav a {
-        margin: 0 1rem;
+        margin: 0 1.5rem;
         text-decoration: none;
-        color: #ff69b4;
-        font-weight: bold;
-        font-size: 1.2rem;
+        color: #9ca3af;
+        font-weight: 500;
+        padding: 0.75rem 1.25rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
       }
       nav a:hover {
-        color: #ff1493;
+        background: #1f2937;
+        color: #60a5fa;
+        transform: translateY(-1px);
       }
       .container {
-        max-width: 1000px;
-        margin: 2rem auto;
+        max-width: 1200px;
+        margin: 3rem auto;
         padding: 1rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2rem;
+        gap: 2.5rem;
       }
       .card {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(145deg, #1f2937, #111827);
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
         text-align: center;
-        padding: 2rem;
-        width: 250px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 2.5rem;
+        width: 280px;
+        transition: all 0.4s ease;
+        border: 1px solid #374151;
       }
       .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        border-color: #3b82f6;
       }
       .card h2 {
-        color: #ff69b4;
-        margin-bottom: 1rem;
+        color: #f8fafc;
+        margin-bottom: 1.2rem;
+        font: 600 1.4rem "Inter";
       }
       .card p {
-        font-size: 0.9rem;
-        color: #555;
+        font-size: 1rem;
+        color: #9ca3af;
+        line-height: 1.6;
+        margin-bottom: 2rem;
       }
       .card a {
         display: inline-block;
         margin-top: 1rem;
-        padding: 0.5rem 1rem;
-        background: #ff69b4;
+        padding: 0.9rem 2rem;
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
         color: #fff;
         text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
+        border-radius: 8px;
+        font: 600 0.95rem "Inter";
+        letter-spacing: 0.025em;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
       }
       .card a:hover {
-        background: #ff1493;
-      }
-      footer {
-        text-align: center;
-        padding: 2rem 0;
-        background-color: #fff;
-        color: #333;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
-      footer p {
-        margin: 0;
-        font-size: 0.9rem;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
       }
       .section {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 1rem;
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 2.5rem;
+        background: linear-gradient(145deg, #1f2937, #111827);
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        border: 1px solid #374151;
       }
       .section h2 {
-        color: #ff69b4;
-        margin-bottom: 1rem;
+        color: #f8fafc;
+        margin-bottom: 2rem;
         text-align: center;
+        font: 600 1.8rem "Inter";
       }
       .section ul {
-        list-style-type: none;
+        list-style: none;
         padding: 0;
       }
       .section li {
-        margin: 0.5rem 0;
+        margin: 1.2rem 0;
+        padding: 1rem;
+        background: linear-gradient(145deg, #374151, #1f2937);
+        border-radius: 10px;
+        border-left: 4px solid #3b82f6;
+        transition: all 0.3s ease;
+      }
+      .section li:hover {
+        transform: translateX(8px);
+        background: linear-gradient(145deg, #4b5563, #374151);
       }
       .section a {
+        color: #60a5fa;
+        font-weight: 500;
         text-decoration: none;
-        color: #ff69b4;
-        font-weight: bold;
+        transition: all 0.2s ease;
       }
       .section a:hover {
-        color: #ff1493;
+        color: #2e69ac;
+      }
+      footer {
+        text-align: center;
+        padding: 3rem 0;
+        background: #0f172a;
+        color: #64748b;
+        margin-top: 4rem;
+        border-top: 1px solid #1e293b;
+      }
+      footer p {
+        margin: 0;
+        font: 400 0.9rem "Inter";
       }
     </style>
     <script src="script.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>Welcome to My Personal Webpage</h1>
-      <p>
-        Explore my skills, learn more about me, and check out my projects and
-        adventures!
-      </p>
+      <img
+        src="cutesy sit.png"
+        alt="Elisabeth Vollum"
+        style="
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          margin-bottom: 1.5rem;
+          border: 4px solid #60a5fa;
+          box-shadow: 0 8px 24px rgba(96, 165, 250, 0.3);
+          object-fit: cover;
+          position: relative;
+          z-index: 2;
+        "
+      />
+      <h1>Elisabeth Vollum</h1>
+      <p>| Master student Geography | GIS enthusiast |</p>
     </header>
     <nav>
-      <a href="about.html">About Me</a>
+      <a href="about.html">Who am I</a>
       <a href="skills.html">Skills</a>
-      <a href="Projects/projects.html">Projects</a>
-      <a href="adventure.html">Adventure</a>
-      <a href="blog.html">Visit My Blog</a>
-      <a href="Hikingadventures/hiking.html">Hiking Adventures</a>
+      <a href="Projects/projects.html"> GIS Projects</a>
+      <a href="blog.html">BlogPosts</a>
     </nav>
     <div class="container">
       <div class="card">
-        <h2>About Me</h2>
+        <h2>Who am I</h2>
         <p>Learn more about who I am, my background, and my passions.</p>
         <a href="about.html">Read More</a>
       </div>
@@ -160,48 +270,15 @@
         <a href="skills.html">View Skills</a>
       </div>
       <div class="card">
-        <h2>Projects</h2>
+        <h2>GIS Projects</h2>
         <p>Explore the projects I've worked on and the impact they've made.</p>
         <a href="Projects/projects.html">See Projects</a>
       </div>
       <div class="card">
-        <h2>Adventure</h2>
-        <p>Find out how I connect with nature and embrace the outdoors.</p>
-        <a href="adventure.html">Join the Adventure</a>
+        <h2>Blog Posts</h2>
+        <p>Explore my thoughts and insights on various topics.</p>
+        <a href="blog.html">See Blog</a>
       </div>
-      <div class="card">
-        <h2>Hiking Adventures</h2>
-        <p>Join me on my hiking journeys and explore the trails I love.</p>
-        <a href="Hikingadventures/hiking.html">See Hiking Adventures</a>
-      </div>
-    </div>
-    <div class="section">
-      <h2>🥾 Hiking Adventures</h2>
-      <ul>
-        <li>
-          <a href="Hikingadventures/Storheia2025/Storheia.html"
-            >Storheia Sunday Adventure 🌞</a
-          >
-        </li>
-        <li>
-          <a href="Hikingadventures/Fjordrutapart12025/Fjordruta.html"
-            >Fjordruta Hiking Adventure 🌊</a
-          >
-        </li>
-        <!-- Add more adventures here -->
-      </ul>
-    </div>
-    <div style="text-align: center; margin: 1.5rem 0">
-      <a
-        href="Hikingadventures/hiking.html"
-        style="
-          font-size: 1.2rem;
-          color: #3a7ca5;
-          text-decoration: none;
-          font-weight: bold;
-        "
-        >See all Hiking Adventures 🥾</a
-      >
     </div>
     <footer>
       <p>&copy; 2025 Elisabeth Vollum. All rights reserved.</p>

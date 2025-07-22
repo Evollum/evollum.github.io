@@ -3,93 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Blog</title>
+    <title>Blogposts - Elisabeth Vollum</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #fff0f5;
-        color: #333;
-        line-height: 1.6;
-      }
-      header {
-        background: linear-gradient(135deg, #ff69b4, #ff1493);
-        color: #fff;
-        padding: 2rem 0;
-        text-align: center;
-      }
-      header h1 {
-        font-size: 2.5rem;
-        margin: 0;
-      }
-      #blog-section {
-        padding: 2rem;
-        background-color: #f9f9f9;
-        border-top: 2px solid #ddd;
-      }
-      #blog-section h2 {
-        font-size: 2rem;
-        text-align: center;
-        margin-bottom: 1.5rem;
-      }
-      #blog-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-      }
-      .blog-post {
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        padding: 1rem;
-        width: calc(33.333% - 20px);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .blog-post h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-      }
-      .blog-post p {
-        font-size: 1rem;
-        color: #555;
-      }
+      * { box-sizing: border-box; }
+      body { font-family: "Inter", sans-serif; margin: 0; background: #0a0a0a; color: #e2e8f0; line-height: 1.6; }
+      header { background: linear-gradient(135deg, #1e293b, #0f172a); color: #ffffff; padding: 4rem 0; text-align: center; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); position: relative; overflow: hidden; }
+      header::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 20%, rgba(96, 165, 250, 0.1), transparent 50%), radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.1), transparent 50%); }
+      header h1 { font: 700 3rem/1 "Inter"; margin: 0; letter-spacing: -0.025em; background: linear-gradient(135deg, #60a5fa, #3b82f6, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: relative; z-index: 1; }
+      header p { font: 400 1.2rem "Inter"; margin: 1rem auto 0; opacity: 0.8; max-width: 600px; color: #cbd5e1; position: relative; z-index: 1; }
+      nav { background: #111827; padding: 1rem 0; box-shadow: 0 4px 20px rgba(0,0,0,0.3); text-align: center; border-bottom: 1px solid #374151; }
+      nav a { margin: 0 2rem; text-decoration: none; color: #9ca3af; font-weight: 500; padding: 0.75rem 1.25rem; border-radius: 8px; transition: all 0.3s ease; }
+      nav a:hover { background: #1f2937; color: #60a5fa; transform: translateY(-1px); }
+      .container { max-width: 1200px; margin: 3rem auto; padding: 2rem; }
+      .blog-header { text-align: center; margin-bottom: 3rem; }
+      .blog-header h2 { font: 600 2.5rem "Inter"; margin: 0; background: linear-gradient(135deg, #60a5fa, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+      .blog-header p { color: #9ca3af; font-size: 1.1rem; margin-top: 1rem; }
+      .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+      .blog-card { background: linear-gradient(145deg, #1f2937, #111827); border-radius: 16px; overflow: hidden; border: 1px solid #374151; transition: all 0.4s ease; position: relative; }
+      .blog-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #60a5fa, #3b82f6, #8b5cf6); transform: scaleX(0); transition: transform 0.4s ease; }
+      .blog-card:hover::before { transform: scaleX(1); }
+      .blog-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 25px 50px rgba(0,0,0,0.7); border-color: #3b82f6; }
+      .blog-image { height: 200px; background: linear-gradient(135deg, #374151, #1f2937); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #60a5fa; }
+      .blog-content { padding: 2rem; }
+      .blog-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; font-size: 0.9rem; color: #9ca3af; }
+      .blog-tag { background: rgba(96, 165, 250, 0.2); color: #60a5fa; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
+      .blog-card h3 { color: #f8fafc; margin: 0 0 1rem 0; font: 600 1.4rem "Inter"; line-height: 1.3; }
+      .blog-card p { color: #9ca3af; margin: 0 0 1.5rem 0; line-height: 1.6; }
+      .read-more { display: inline-flex; align-items: center; gap: 0.5rem; color: #60a5fa; font-weight: 500; text-decoration: none; transition: all 0.2s ease; }
+      .read-more:hover { color: #93c5fd; transform: translateX(4px); }
+      .read-more::after { content: "→"; transition: transform 0.2s ease; }
+      .read-more:hover::after { transform: translateX(4px); }
+    </style>
     </style>
   </head>
   <body>
     <header>
-      <h1>My Blog</h1>
+      <h1>Professional Insights</h1>
+      <p>Thoughts, expertise, and perspectives on geography, sustainability, and innovation</p>
     </header>
-    <section id="blog-section">
-      <h2>Blog Posts</h2>
-      <div id="blog-container">
-        <div class="blog-post">
-          <h3>Exploring Sustainability</h3>
-          <p>
-            Discover how geospatial tools can help us create a more sustainable
-            future.
-          </p>
-        </div>
-        <div class="blog-post">
-          <h3>Mapping with ArcGIS</h3>
-          <p>
-            Learn about my latest projects and techniques using ArcGIS for
-            mapping.
-          </p>
-        </div>
-        <div class="blog-post">
-          <h3>Freetime activities</h3>
-          <p>
-            Join me on my adventures in hiking, photography, and exploring the
-            great outdoors.
-          </p>
-        </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="Projects/projects.html">Projects</a>
+    </nav>
+    <div class="container">
+      <div class="blog-header">
+        <h2>Latest Articles</h2>
+        <p>Exploring the intersection of technology, sustainability, and strategic thinking</p>
       </div>
-    </section>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-image">
+            <img src="HERO_Ultimate_HongKong_dreamstime_68784072-3763263172.jpg" alt="Hong Kong skyline" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-tag">Seismology</span>
+              <span>July 22, 2025</span>
+            </div>
+            <h3>Earthquake Analysis: Hong Kong Seismic Activity</h3>
+            <p>Comprehensive analysis of recent seismic activity in Hong Kong, examining geological patterns, risk assessment methodologies, and implications for urban planning and infrastructure development.</p>
+            <a href="Oppgave4_Vollum.pdf" class="read-more" target="_blank">Read Full Article (PDF)</a>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="blog-image">
+            <img src="Coding.jpg" alt="Programming and coding" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-tag">R Programming</span>
+              <span>June 15, 2025</span>
+            </div>
+            <h3>R Programming and Statistical Analysis</h3>
+            <p>Examination covering R programming techniques, statistical modeling, data visualization, and computational methods for geographic and environmental data analysis.</p>
+            <a href="R.eksamen.pdf" class="read-more" target="_blank">Read Full Article (PDF)</a>
+          </div>
+        </article>
+      </div>
+    </div>
   </body>
 </html>

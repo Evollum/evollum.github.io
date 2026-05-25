@@ -369,90 +369,7 @@
 
         <!-- Book Pages (hidden until opened) -->
         <div class="book-pages" style="display: none">
-          <div class="certificate-page active">
-            <h3>ArcGIS Online Basics</h3>
-            <iframe
-              src="Certificates/ArcGIS Online Basics_Certificate_10072025.pdf"
-            ></iframe>
-            <p>ArcGIS Online Basics Certificate</p>
-          </div>
-          <div class="certificate-page">
-            <h3>ArcGIS Pro Basics</h3>
-            <iframe
-              src="Certificates/ArcGIS Pro Basics_Certificate_10062025.pdf"
-            ></iframe>
-            <p>ArcGIS Pro Basics Certificate</p>
-          </div>
-          <div class="certificate-page">
-            <h3>Basics of Geographic Coordinate Systems</h3>
-            <iframe
-              src="Certificates/Basics of Geographic Coordinate Systems_Certificate_10072025.pdf"
-            ></iframe>
-            <p>Basics of Geographic Coordinate Systems Certificate</p>
-          </div>
-          <div class="certificate-page">
-            <h3>Editing Basics in ArcGIS Pro</h3>
-            <iframe
-              src="Certificates/Editing Basics in ArcGIS Pro_Certificate_10072025.pdf"
-            ></iframe>
-            <p>Editing Basics in ArcGIS Pro Certificate</p>
-          </div>
-          <div class="certificate-page">
-            <h3>Getting Started with Data Management</h3>
-            <iframe
-              src="Certificates/Getting Started with Data Management_Certificate_10092025.pdf"
-            ></iframe>
-            <p>Getting Started with Data Management Certificate</p>
-          </div>
-          <div class="certificate-page">
-            <h3>Getting Started with Mapping and Visualization</h3>
-            <iframe
-              src="Certificates/Getting Started with Mapping and Visualization_Certificate_10092025.pdf"
-            ></iframe>
-            <p>Getting Started with Mapping and Visualization Certificate</p>
-          </div>
-          <div class="certificate-page">
-            <h3>Getting Started with Spatial Analysis</h3>
-            <iframe
-              src="Certificates/Getting Started with Spatial Analysis_Certificate_10092025.pdf"
-            ></iframe>
-            <p>Getting Started with Spatial Analysis Certificate</p>
-          </div>
-          <div class="certificate-page">
-            <h3>GIS Basics</h3>
-            <iframe
-              src="Certificates/GIS Basics_Certificate_10072025.pdf"
-            ></iframe>
-            <p>GIS Basics Certificate</p>
-          </div>
-          <div class="certificate-page">
-            <h3>Integrating Data in ArcGIS Pro</h3>
-            <iframe
-              src="Certificates/Integrating Data in ArcGIS Pro_Certificate_10092025.pdf"
-            ></iframe>
-            <p>Integrating Data in ArcGIS Pro Certificate</p>
-          </div>
-          <div class="certificate-page">
-            <h3>Location-Enabling Data</h3>
-            <iframe
-              src="Certificates/Location-Enabling Data_Certificate_10092025.pdf"
-            ></iframe>
-            <p>Location-Enabling Data Certificate</p>
-          </div>
-          <div class="certificate-page">
-            <h3>Sharing Maps and Layers with ArcGIS Pro</h3>
-            <iframe
-              src="Certificates/Sharing Maps and Layers with ArcGIS Pro_Certificate_10092025.pdf"
-            ></iframe>
-            <p>Sharing Maps and Layers with ArcGIS Pro Certificate</p>
-          </div>
-          <div class="certificate-page">
-            <h3>Symbolizing Map Layers</h3>
-            <iframe
-              src="Certificates/Symbolizing Map Layers_Certificate_10072025.pdf"
-            ></iframe>
-            <p>Symbolizing Map Layers Certificate</p>
-          </div>
+          <div class="certificate-pages" id="certificatePages"></div>
           <div class="book-nav">
             <button id="prevPage" disabled>&larr; Previous Page</button>
             <button id="nextPage">Next Page &rarr;</button>
@@ -463,6 +380,81 @@
     </section>
     <script>
       // Book front cover logic
+          const certificatePageData = [
+            {
+              title: "ArcGIS Online Basics",
+              src: "Certificates/ArcGIS Online Basics_Certificate_10072025.pdf",
+              label: "ArcGIS Online Basics Certificate",
+            },
+            {
+              title: "ArcGIS Pro Basics",
+              src: "Certificates/ArcGIS Pro Basics_Certificate_10062025.pdf",
+              label: "ArcGIS Pro Basics Certificate",
+            },
+            {
+              title: "Basics of Geographic Coordinate Systems",
+              src: "Certificates/Basics of Geographic Coordinate Systems_Certificate_10072025.pdf",
+              label: "Basics of Geographic Coordinate Systems Certificate",
+            },
+            {
+              title: "Editing Basics in ArcGIS Pro",
+              src: "Certificates/Editing Basics in ArcGIS Pro_Certificate_10072025.pdf",
+              label: "Editing Basics in ArcGIS Pro Certificate",
+            },
+            {
+              title: "Getting Started with Data Management",
+              src: "Certificates/Getting Started with Data Management_Certificate_10092025.pdf",
+              label: "Getting Started with Data Management Certificate",
+            },
+            {
+              title: "Getting Started with Mapping and Visualization",
+              src: "Certificates/Getting Started with Mapping and Visualization_Certificate_10092025.pdf",
+              label: "Getting Started with Mapping and Visualization Certificate",
+            },
+            {
+              title: "Getting Started with Spatial Analysis",
+              src: "Certificates/Getting Started with Spatial Analysis_Certificate_10092025.pdf",
+              label: "Getting Started with Spatial Analysis Certificate",
+            },
+            {
+              title: "GIS Basics",
+              src: "Certificates/GIS Basics_Certificate_10072025.pdf",
+              label: "GIS Basics Certificate",
+            },
+            {
+              title: "Integrating Data in ArcGIS Pro",
+              src: "Certificates/Integrating Data in ArcGIS Pro_Certificate_10092025.pdf",
+              label: "Integrating Data in ArcGIS Pro Certificate",
+            },
+            {
+              title: "Location-Enabling Data",
+              src: "Certificates/Location-Enabling Data_Certificate_10092025.pdf",
+              label: "Location-Enabling Data Certificate",
+            },
+            {
+              title: "Sharing Maps and Layers with ArcGIS Pro",
+              src: "Certificates/Sharing Maps and Layers with ArcGIS Pro_Certificate_10092025.pdf",
+              label: "Sharing Maps and Layers with ArcGIS Pro Certificate",
+            },
+            {
+              title: "Symbolizing Map Layers",
+              src: "Certificates/Symbolizing Map Layers_Certificate_10072025.pdf",
+              label: "Symbolizing Map Layers Certificate",
+            },
+          ];
+
+          const certificatePagesContainer = document.getElementById("certificatePages");
+          certificatePagesContainer.innerHTML = certificatePageData
+            .map(
+              (certificate, index) => `
+                <div class="certificate-page${index === 0 ? " active" : ""}">
+                  <h3>${certificate.title}</h3>
+                  <iframe src="${certificate.src}"></iframe>
+                  <p>${certificate.label}</p>
+                </div>
+              `,
+            )
+            .join("");
       const bookFront = document.querySelector(".book-front");
       const bookPages = document.querySelector(".book-pages");
       const openBookBtn = document.getElementById("openBookBtn");
@@ -470,7 +462,7 @@
         bookFront.style.display = "none";
         bookPages.style.display = "block";
       });
-
+          const pages = document.querySelectorAll(".certificate-page");
       // Interactive book navigation
       const pages = document.querySelectorAll(".certificate-page");
       let currentPage = 0;

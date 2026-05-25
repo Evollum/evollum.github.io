@@ -281,6 +281,44 @@
         gap: 1rem;
         margin-top: 2rem;
       }
+      .related-work {
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid #374151;
+      }
+      .related-work h3 {
+        color: #f8fafc;
+        margin: 0 0 1rem 0;
+        font: 600 1.25rem "Inter";
+      }
+      .related-work-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+      .related-work-card {
+        background: rgba(139, 92, 246, 0.08);
+        border: 1px solid rgba(139, 92, 246, 0.18);
+        border-radius: 12px;
+        padding: 1.25rem;
+      }
+      .related-work-card .card-label {
+        color: #8b5cf6;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .related-work-card h4 {
+        color: #f8fafc;
+        margin: 0.5rem 0;
+        font: 600 1.05rem "Inter";
+      }
+      .related-work-card p {
+        color: #9ca3af;
+        margin: 0 0 1rem 0;
+        font-size: 0.95rem;
+      }
       .btn {
         padding: 1rem 2rem;
         border-radius: 8px;
@@ -467,6 +505,24 @@
           <a href="projects.html" class="btn btn-secondary"
             >View All Projects</a
           >
+        </div>
+
+        <div class="related-work">
+          <h3>Related Academic PDFs</h3>
+          <div class="related-work-grid">
+            <div class="related-work-card">
+              <div class="card-label">Academic PDF</div>
+              <h4>Earthquake Analysis: Hong Kong Seismic Activity</h4>
+              <p>Direct access to the Oppgave 4 PDF stored alongside the rest of the project material.</p>
+              <a href="Oppgave4_Vollum.pdf" class="view-project" target="_blank" rel="noreferrer">Open PDF</a>
+            </div>
+            <div class="related-work-card">
+              <div class="card-label">Academic PDF</div>
+              <h4>R Programming and Statistical Analysis</h4>
+              <p>Direct access to the R exam PDF, now kept in Projects so it is easy to find.</p>
+              <a href="R.eksamen.pdf" class="view-project" target="_blank" rel="noreferrer">Open PDF</a>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bachelor Assignment - Elisabeth Vollum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: "Inter", sans-serif; margin: 0; background: #0a0a0a; color: #e2e8f0; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #1e293b, #0f172a); color: #ffffff; padding: 4rem 0; text-align: center; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); position: relative; overflow: hidden; }
+        header::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.15), transparent 50%), radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15), transparent 50%); }
+        .project-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 8rem; opacity: 0.1; z-index: 1; animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translate(-50%, -50%) translateY(0px); } 50% { transform: translate(-50%, -50%) translateY(-10px); } }
+        header h1 { font: 700 3rem/1 "Inter"; margin: 0; letter-spacing: -0.025em; background: linear-gradient(135deg, #60a5fa, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: relative; z-index: 2; }
+        header p { font: 400 1.2rem "Inter"; margin: 1rem auto 0; opacity: 0.8; max-width: 700px; color: #cbd5e1; position: relative; z-index: 2; }
+        nav { background: #111827; padding: 1rem 0; box-shadow: 0 4px 20px rgba(0,0,0,0.3); text-align: center; border-bottom: 1px solid #374151; }
+        nav a { margin: 0 1.5rem; text-decoration: none; color: #9ca3af; font-weight: 500; padding: 0.75rem 1.25rem; border-radius: 8px; transition: all 0.3s ease; }
+        nav a:hover { background: #1f2937; color: #60a5fa; transform: translateY(-1px); }
+        .container { max-width: 1100px; margin: 3rem auto; padding: 2rem; }
+        .project-details { background: linear-gradient(145deg, #1f2937, #111827); border-radius: 16px; padding: 2.5rem; border: 1px solid #374151; }
+        .project-details h2 { color: #f8fafc; margin: 0 0 1.5rem 0; font: 600 1.8rem "Inter"; display: flex; align-items: center; gap: 0.75rem; }
+        .project-details p { color: #cbd5e1; margin-bottom: 1.5rem; line-height: 1.7; }
+        .project-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
+        .stat { background: #0f172a; border: 1px solid #374151; border-radius: 12px; padding: 1rem; text-align: center; }
+        .stat-number { display: block; color: #60a5fa; font: 700 1.4rem "Inter"; }
+        .stat-label { color: #9ca3af; font-size: 0.9rem; }
+        .project-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.9rem 1.3rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
+        .btn-primary { background: linear-gradient(135deg, #2563eb, #7c3aed); color: #ffffff; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35); }
+        .btn-secondary { background: transparent; color: #cbd5e1; border: 1px solid #475569; }
+        .btn-secondary:hover { border-color: #60a5fa; color: #93c5fd; }
+        .info-list { margin: 1.5rem 0 0; padding-left: 1.25rem; color: #cbd5e1; }
+        .info-list li { margin: 0.65rem 0; }
+        .highlight { color: #93c5fd; font-weight: 600; }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.4rem; }
+            .project-stats { grid-template-columns: 1fr; }
+            nav a { margin: 0 0.5rem; display: inline-block; }
+            .container { padding: 1rem; }
+            .project-details { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="project-icon">🎓</div>
+        <h1>Bachelor Assignment</h1>
+        <p>Academic work presented as part of my geospatial and geographic portfolio</p>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../skills.html">Skills</a>
+        <a href="projects.html">All Projects</a>
+        <a href="../blog.html">Blog</a>
+    </nav>
+    <div class="container">
+        <div class="project-details">
+            <h2><div class="section-icon">📘</div>Project Overview</h2>
+            <p>This bachelor assignment is the main academic deliverable from my studies and belongs alongside the rest of my project work. It can be presented directly as a PDF while still fitting the same portfolio structure as the other projects.</p>
+            <p>The document is available through a stable project link so it can be opened from the website without needing to navigate away from the Projects section.</p>
+            <div class="project-stats">
+                <div class="stat">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Bachelor assignment</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">PDF</span>
+                    <span class="stat-label">Document format</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">Academic</span>
+                    <span class="stat-label">Portfolio category</span>
+                </div>
+            </div>
+            <h2><div class="section-icon">✨</div>What It Covers</h2>
+            <ul class="info-list">
+                <li>Academic research and analysis in the same style as the rest of the portfolio</li>
+                <li>Work that sits naturally with the Projects section rather than Blog</li>
+                <li>A clean entry point for visitors who want to read the assignment as a PDF</li>
+            </ul>
+            <div class="project-links">
+                <a href="bachelor-assignment.pdf" class="btn btn-primary" target="_blank" rel="noreferrer">Open PDF</a>
+                <a href="projects.html" class="btn btn-secondary">Back to Projects</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

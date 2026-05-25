@@ -2,28 +2,32 @@
 
 # Elisabeth Vollum's Portfolio
 
-This project is a personal portfolio website for Elisabeth Vollum, showcasing her skills, projects, and contact information. The website is designed to provide a professional online presence and to highlight her academic and personal interests.
+This project is a personal portfolio website for Elisabeth Vollum, showcasing skills, GIS work, academic work, and personal updates.
 
 ## Project Structure
 
-The project contains the following files:
-
-- **index.html**: This file contains the main content of the portfolio, including sections for "About Me," "Skills," and "Contact."
-  
-- **projects.html**: This file organizes links to various projects. It includes a list of project titles with corresponding href elements linking to each project.
-
-- **README.md**: This documentation file explains the purpose of the project and provides guidance on navigating the website.
+- `index.html`: Homepage with navigation to the main sections.
+- `about.html`: Background and profile page.
+- `skills.html`: Skills and tools page.
+- `Projects/projects.html`: Main project portfolio, including GIS projects and the bachelor assignment.
+- `Projects/project1.html`: Project detail page.
+- `Projects/project2.html`: Project detail page.
+- `Projects/bachelor-assignment.pdf`: Local PDF for the bachelor assignment.
+- `Projects/bachelor-assignment.html`: Bachelor assignment page with the PDF link.
+- `blog.html`: Reserved for personal posts and updates.
+- `certificates.html`: Certificates and achievements.
 
 ## Navigation
 
-- To view the main portfolio, open `index.html`.
-- To see the list of projects, navigate to `projects.html`.
+- Open `index.html` for the main entry point.
+- Use `Projects/projects.html` for project work and the bachelor assignment.
+- Use `blog.html` for personal content.
 
-## Future Enhancements
+## Current Split
 
-- Add more projects to the `projects.html` file.
-- Include additional sections or features to enhance the portfolio's functionality and design.
+- Projects = GIS work, academic work, and portfolio pieces.
+- Blog = personal events and reflections.
 
 ## Contact
 
-For inquiries, please reach out via the contact information provided in the portfolio.
+For inquiries, use the contact information provided on the website.
